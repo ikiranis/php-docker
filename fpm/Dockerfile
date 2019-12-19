@@ -15,10 +15,9 @@ RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-configure opcache --enable-opcache && \
   docker-php-ext-install opcache
 
-# Xdebug, Redis
-RUN pecl install redis-5.1.1 \
-    && pecl install xdebug-2.8.1 \
-    && docker-php-ext-enable redis xdebug
+# Xdebug
+RUN pecl install xdebug-2.8.1 \
+    && docker-php-ext-enable xdebug
 
 # Install composer.
 RUN cd ~
