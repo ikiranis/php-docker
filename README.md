@@ -23,11 +23,11 @@ docker exec -it app_fpm /bin/bash -c "TERM=$TERM exec bash"
 ~~~~
 
 Create Laravel project
-----
+~~~~
 composer create-project --prefer-dist laravel/laravel .
-----
+~~~~
 
 Serve
-----
+~~~~
 php artisan serve --host 0.0.0.0
-----
+~~~~
