@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  fpm:
+  php_env:
     build:
-      context: ./fpm
+      context: ./docker
     container_name: app_fpm
     restart: always
     volumes:
       - ./../www:/var/www/html
-    ports: 
+    ports:
       - "8000:8000"
