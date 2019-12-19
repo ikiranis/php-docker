@@ -2,12 +2,10 @@
 
 This is a development environment for PHP.
 It contains,
-- Apache
 - PHP-FPM
 - GD
 - Composer
-- MariaDB
-- phpMyAdmin
+- Xdebug
 
 # Installation
 Requirements
@@ -19,21 +17,13 @@ cp .env.example .env
 docker-compose build && docker-compose up -d
 ~~~~
 
-Go to your browser on 127.0.0.1 to check that everything is working correctly.
-You should see,
-~~~~
-Hello world!
-~~~~
-
-Start developing your PHP application in ./data/www
-
 Login to the container,
 ~~~~
-docker exec -it app_server /bin/bash -c "TERM=$TERM exec bash"
+docker exec -it app_fpm /bin/bash -c "TERM=$TERM exec bash"
 ~~~~
 
-# By SocialNerds
-* [SocialNerds.gr](https://www.socialnerds.gr/)
-* [YouTube](https://www.youtube.com/SocialNerdsGR)
-* [Facebook](https://www.facebook.com/SocialNerdsGR)
-* [Twitter](https://twitter.com/socialnerdsgr)
+Create Laravel project
+----
+composer create-project --prefer-dist laravel/laravel .
+----
+
