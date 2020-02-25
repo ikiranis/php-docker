@@ -21,8 +21,12 @@ Login to the container,
 docker exec -it app_fpm /bin/bash
 ~~~~
 
+Project files will be in data/www
+
 Create Laravel project
 ~~~~
+cd www
+rm index.php
 composer create-project --prefer-dist laravel/laravel .
 ~~~~
 
