@@ -36,12 +36,18 @@ RUN cd ~
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN rm -rf composer-setup.php
+USER serveruser
+WORKDIR /home/serveruser
+RUN echo "PATH=$PATH:~/.composer/vendor/bin" >> ~/.bashrc
 
 # Install phpunit.
+USER root
 RUN wget https://phar.phpunit.de/phpunit.phar && \
   chmod +x phpunit.phar && \
   mv phpunit.phar /usr/local/bin/phpunit
 
-WORKDIR /var/www/html
+USER serveruser
+
+WORKDIR /home/serveruser
 
 ENTRYPOINT ["php-fpm"]
