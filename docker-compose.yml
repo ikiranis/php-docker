@@ -4,6 +4,9 @@ services:
   php_env:
     build:
       context: ./docker
+    args:
+        UID: ${USER_ID}
+        GID: ${GROUP_ID}
     container_name: app_fpm
     restart: always
     volumes:
