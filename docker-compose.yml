@@ -7,6 +7,6 @@ services:
     container_name: app_fpm
     restart: always
     volumes:
-      - ./../www:/var/www/html
+      - ./data/www:/var/www/html
     ports:
       - "8000:8000"
