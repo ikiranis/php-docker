@@ -21,6 +21,14 @@ Login to the container,
 docker exec -it app_fpm /bin/bash
 ~~~~
 
+or in PHPstorm. In docker services choose app_fpm container. Right click and click exec.
+Add
+
+```
+/bin/bash
+```
+
+
 Project files will be in data/www
 
 Create Laravel project
