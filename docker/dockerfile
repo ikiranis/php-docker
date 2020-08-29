@@ -16,9 +16,9 @@ RUN sed -i -e"s/^user\s=\swww-data/user = serveruser/" /usr/local/etc/php-fpm.d/
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
-        libpng-dev libjpeg-dev \
+        libpng-dev libjpeg-dev libwebp-dev \
         git wget nano netcat zip curl unzip default-mysql-client \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) gd
 
 RUN docker-php-ext-install pdo_mysql
