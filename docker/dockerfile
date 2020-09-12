@@ -20,7 +20,9 @@ RUN apt-get update && apt-get install -y \
         git wget nano netcat zip curl unzip default-mysql-client \
     && docker-php-ext-configure zip --with-zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-zip \
-    && docker-php-ext-install -j$(nproc) gd
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install zip && \
+      php -m | grep -q 'zip'
 
 RUN docker-php-ext-install pdo_mysql
 
