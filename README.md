@@ -6,6 +6,7 @@ It contains,
 - GD
 - Composer
 - Xdebug
+- Npm/Vue
 
 # Installation
 Requirements
@@ -49,3 +50,12 @@ php artisan serve --host 0.0.0.0
 First you must build and run the container
 
 We can add a new interpreter from the preferences pane, by selecting Languages & Frameworks, then PHP, and clicking the […] button next to the interpreter drop down. Next, we click the [+] button to add a new interpreter and select Remote.
+
+### Serve npm 
+
+To change host and port of ``npm run server``, Go to package.json and change scripts/serve to
+
+```
+"serve": "vue-cli-service serve --host 0.0.0.0 --port 8000",
+```
+
