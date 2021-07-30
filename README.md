@@ -12,6 +12,8 @@ It contains,
 Requirements
 - You need to have [Docker](https://docs.docker.com/engine/installation/) installed
 
+Copy .env.example to .env
+
 Run in root folder,
 ~~~~
 docker-compose build && docker-compose up -d
